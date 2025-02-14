@@ -81,7 +81,7 @@ def add_task(username, text):
   if not bob:
       print(f'{username} not found!')
       return
-  new_todo = Todo(text)
+  new_todo = Todo(text, user_id=bob.id)
   bob.todos.append(new_todo)
   db.session.add(bob)
   db.session.commit()
